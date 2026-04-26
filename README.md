@@ -1,16 +1,54 @@
-# React + Vite
+# ShivAnsh – Devotional React Web App 🙏
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 🌟 Overview
+ShivAnsh is a modern and immersive devotional web application dedicated to Lord Shiva. It provides a calm and engaging digital space for daily spiritual practices through a clean and interactive interface.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Features
+- 🧘 Daily spiritual quotes for positivity  
+- 🔢 Interactive jaap counter for mantra tracking  
+- 🎵 Devotional bhajans collection  
+- 📿 Sacred mantras section  
+- ❤️ Save favorites using local storage  
+- 📡 Live darshan integration (with fallback support)
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Tech Stack
+- React (Vite)  
+- Tailwind CSS  
+- Framer Motion  
+- Lucide React  
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🎨 UI/UX Highlights
+- Dark theme with saffron & gold accents  
+- Smooth animations and micro-interactions  
+- Glassmorphism-inspired design  
+- Fully responsive across devices  
+
+---
+
+## 📸 Screenshots
+
+<p align="center">
+  <img src="./assets/home.jpeg" width="45%" />
+  <img src="./assets/daily-quotes.jpeg" width="45%" />
+</p>
+
+<p align="center">
+  <img src="./assets/jaap.jpeg" width="45%" />
+  <img src="./assets/saved-section.jpeg" width="45%" />
+</p>
+
+---
+
+## ⚙️ Installation & Setup
+
+```bash
+git clone https://github.com/your-username/shivansh-devotional-app.git
+cd shivansh-devotional-app
+npm install
+npm run dev
