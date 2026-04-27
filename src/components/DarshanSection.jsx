@@ -13,6 +13,7 @@ export default function DarshanSection() {
   const [loading, setLoading] = useState(true);
   const [attempts, setAttempts] = useState(0);
 
+  // 🔥 FIXED useEffect
   useEffect(() => {
     setLoading(true);
 
@@ -21,13 +22,14 @@ export default function DarshanSection() {
         setIndex((prev) => (prev + 1) % videos.length);
         setAttempts((prev) => prev + 1);
       }
-    }, 4000);
+    }, 8000); // increased time
 
     return () => clearTimeout(timer);
-  }, [index, loading]);
+  }, [index]);
 
   return (
     <section id="darshan" className="py-24 px-6 relative max-w-7xl mx-auto">
+      
       <motion.div
         initial={{ opacity: 0, scale: 0.95, y: 30, filter: "blur(10px)" }}
         whileInView={{ opacity: 1, scale: 1, y: 0, filter: "blur(0px)" }}
@@ -35,6 +37,8 @@ export default function DarshanSection() {
         transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
         className="text-center"
       >
+        
+        {/* Heading */}
         <div className="inline-block relative mb-4">
           <h2 className="text-3xl md:text-5xl font-serif text-gold uppercase tracking-[0.2em] relative z-10">
             Live Darshan
@@ -46,13 +50,13 @@ export default function DarshanSection() {
           Experience the divine presence instantly through live temple streaming.
         </p>
 
-        {/* Cinematic Video Container */}
+        {/* Video Container */}
         <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-[#020617] shadow-[0_0_50px_rgba(14,165,233,0.15)] aspect-video max-w-5xl mx-auto group">
 
           {/* Glow */}
           <div className="absolute -inset-1 bg-gradient-to-r from-saffron to-gold rounded-3xl blur-xl opacity-20 group-hover:opacity-40 transition-opacity duration-1000 -z-10"></div>
 
-          {/* 🔴 Fallback if all fail */}
+          {/* ❌ If all videos fail */}
           {attempts >= videos.length ? (
             <div className="flex items-center justify-center h-full text-white z-20">
               🔴 Live Darshan is currently unavailable
@@ -72,14 +76,18 @@ export default function DarshanSection() {
                 className="absolute inset-0 w-full h-full bg-black z-10"
                 src={`${videos[index]}?autoplay=1&mute=1`}
                 title="Shri Mahakaleshwar Live Darshan"
-                onLoad={() => setLoading(false)}
                 frameBorder="0"
                 allow="autoplay; encrypted-media"
                 allowFullScreen
+                onLoad={() => {
+                  setLoading(false);
+                  setAttempts(0); // 🔥 reset on success
+                }}
               ></iframe>
             </>
           )}
         </div>
+
       </motion.div>
     </section>
   );
